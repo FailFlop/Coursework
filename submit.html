@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Jami Lin - Contact</title>
+</head>
+<body>
+    <script>
+        function darkFunction() {
+            var trigger = document.getElementById("light");
+            var element = document.getElementById("navbar");
+            element.classList.toggle("darkmode");
+            element = document.body;
+            element.classList.toggle("darkmode");
+            element = document.getElementById("btn-one");
+            element.classList.toggle("darkmode");
+            element = document.getElementById("btn-two");
+            element.classList.toggle("darkmode");
+            element = document.getElementById("footer");
+            element.classList.toggle("darkmode");
+
+            if (document.body.classList.contains("darkmode")){
+                trigger.src = "Images/sun.png";
+                trigger.alt = "Switch to light mode";
+            } else {
+                trigger.src = "Images/moon.png";
+                trigger.alt = "Switch to dark mode";
+                document.getElementById("insta").src = "Images/icon1.png";
+            }
+        }
+    </script>
+    <!-- Contact header section -->
+    
+
+    <!-- NAVIGATION – sticky, outside snap sections (style controlled by CSS) -->
+    <!-- Nav section -->
+    <section>
+    <nav id="navbar">
+        <a href="Basic.html"><img src="Images/Logo.png" alt="Jami Lin logo" id="logo"></a>
+        <a href="about.html" id="text">About</a>
+          <!-- YouthDuo Dropdown Menu -->
+        <div class="dropdown">
+            <a href="#" id="text" class="dropbtn">YouthDuo ▾</a>
+            <div class="dropdown-content">
+                <a href="https://youthduo.com/home">YouthDuo Skincare</a>
+                <a href="https://youthduo.com/anti-aging">Anti-Aging Solutions</a>
+                <a href="https://youthduo.com/organic">Organic Products</a>
+                <a href="https://youthduo.com/vegan">Vegan Skincare</a>
+            </div>
+        </div>
+        
+        <!-- Dropdown Menu -->
+
+        <div class="dropdown">
+            
+            <a  id="text" class="dropbtn">Services ▾</a>
+            <div class="dropdown-content">
+                <a href="https://jamilin.com/galacticspirit/members/free_superpower.php">Galactic Spirit</a>
+                <a href="https://youthduo.com/home">Reverse Ageing Skin Care</a>
+                <a href="https://feng-shui-interior-design.com/">Feng Shui Interior Design</a>
+                <a href="https://coloralchemy.com/">Chakras & ColourAlchemy</a>
+            </div>
+        </div>
+        
+        <a href="contact.html" id="text">Contact</a>
+        <img src="Images/moon.png" alt="toggle dark mode" id="light" onclick="darkFunction()">
+    </nav>
+    </section>
+    
+    <br><br>
+    <!-- Main Contact section -->
+    <h1 id="contact_headers">Find out more here!</h1>
+
+    <br>
+
+    <section id = "socials">
+        <a href="https://www.instagram.com/jamilin_galacticspirit/" style="text-decoration: none;" ><img src="Images/insta_light.png" alt="social icon 1" id="insta"></a>
+        <a href="https://www.youtube.com/@JamiLinsPassions" style="text-decoration: none;"><img src="Images/youtube_light.png" alt="social icon 2"></a>
+        <a href="https://www.facebook.com/JamiLin105" style="text-decoration: none;"><img src="Images/facebook_light.png" alt="social icon 3"></a>
+        <a href="https://www.tiktok.com/@jamilin105" style="text-decoration: none;"><img src="Images/tiktok_light.png" alt="social icon 4"></a>
+    </section>
+
+    <br><br><br>
+
+    <h1 id="contact_headers">Or Contact Us</h1>
+
+    <br>
+    <div class="TC-core-message">
+        <br>
+        <h1><b>Thank you for your feedback!</b></h1>
+        <p>Your feedback has been submitted.</p>
+    </div>
+
+    <br><br><br>
+    <hr>
+    
+
+    <!-- Footer -->
+    <footer id="footer">
+    <div class="footer-container">
+        <div class="footer-left">
+            <p>© 2025 | All Rights Reserved. </p><a href="T&C.html" style="text-decoration: none;">Terms and Conditions</a><!--place inthe T&C page in the href -->
+        </div>
+            <div class="footer-right">
+            <a href="contact.html" style="text-decoration: none;">Contact</a>
+                <div class="footer-icons">
+                    <a href="https://www.instagram.com/jamilin_galacticspirit/" style="text-decoration: none;"><img src="Images/icon1.png" alt="social icon 1"></a>
+                    <a href="https://www.youtube.com/@JamiLinsPassions" style="text-decoration: none;"><img src="Images/icon2.png" alt="social icon 2"></a>
+                    <a href="https://www.facebook.com/JamiLin105" style="text-decoration: none;"><img src="Images/icon3.png" alt="social icon 3"></a>
+                    <a href="https://www.tiktok.com/@jamilin105" style="text-decoration: none;"><img src="Images/icon4.png" alt="social icon 4"></a>
+                </div>
+            </div>
+    </div>
+    </footer>  
+
+    <!-- ensure toggle icon syncs with darkmode -->
+    <script>
+        (function() {
+            window.addEventListener('DOMContentLoaded', function() {
+                let trigger = document.getElementById('light');
+                if (trigger) {
+                    if (document.body.classList.contains('darkmode')) {
+                        trigger.src = "Images/sun.png";
+                    } else {
+                        trigger.src = "Images/moon.png";
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

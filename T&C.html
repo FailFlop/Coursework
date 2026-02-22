@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <link rel="stylesheet" href="style.css">
+    <title>Jami Lin - Services</title>
+</head>
+<body>
+    <!-- Services header section -->
+    <script>
+    function darkFunction() {
+        var trigger = document.getElementById("light");
+        var element = document.getElementById("navbar");
+        element.classList.toggle("darkmode");
+        element = document.body;
+        element.classList.toggle("darkmode");
+        element = document.getElementById("btn-one");
+        if (element) element.classList.toggle("darkmode");
+        element = document.getElementById("btn-two");
+        if (element) element.classList.toggle("darkmode");
+        element = document.getElementById("footer");
+        if (element) element.classList.toggle("darkmode");
+        element = document.getElementById("services");
+        if (element) element.classList.toggle("darkmode");
+        element = document.getElementById("socials");
+        if (element) element.classList.toggle("darkmode");
+        element = document.getElementById("contactForm");
+        if (element) element.classList.toggle("darkmode");
+
+        if (document.body.classList.contains("darkmode")){
+            trigger.src = "Images/sun.png";
+            trigger.alt = "Switch to light mode";
+            localStorage.setItem('darkmode', 'enabled');
+        } else {
+            trigger.src = "Images/moon.png";
+            trigger.alt = "Switch to dark mode";
+            localStorage.setItem('darkmode', 'disabled');
+        }
+        }
+
+        function closePopup(){
+            var popupWindow = document.getElementById("popup");
+            popupWindow.style.display = "none";
+        }
+
+        setInterval(function openPopup(){
+            var popupWindow = document.getElementById("popup");
+            popupWindow.style.display = "block";
+        }, 30000)
+    </script>
+
+    <!-- NAVIGATION – sticky, outside snap sections (style controlled by CSS) -->
+    <!-- Nav section -->
+    <section>
+    <nav id="navbar">
+        <a href="Basic.html"><img src="Images/Logo.png" alt="Jami Lin logo" id="logo"></a>
+        <a href="about.html" id="text">About</a>
+          <!-- YouthDuo Dropdown Menu -->
+        <div class="dropdown">
+            <a href="#" id="text" class="dropbtn">YouthDuo ▾</a>
+            <div class="dropdown-content">
+                <a href="https://youthduo.com/home">YouthDuo Skincare</a>
+                <a href="https://youthduo.com/anti-aging">Anti-Aging Solutions</a>
+                <a href="https://youthduo.com/organic">Organic Products</a>
+                <a href="https://youthduo.com/vegan">Vegan Skincare</a>
+            </div>
+        </div>
+        
+        <!-- Dropdown Menu -->
+
+        <div class="dropdown">
+            
+            <a  id="text" class="dropbtn">Services ▾</a>
+            <div class="dropdown-content">
+                <a href="https://jamilin.com/galacticspirit/members/free_superpower.php">Galactic Spirit</a>
+                <a href="https://youthduo.com/home">Reverse Ageing Skin Care</a>
+                <a href="https://feng-shui-interior-design.com/">Feng Shui Interior Design</a>
+                <a href="https://coloralchemy.com/">Chakras & ColourAlchemy</a>
+            </div>
+        </div>
+        
+        <a href="contact.html" id="text">Contact</a>
+        <img src="Images/moon.png" alt="toggle dark mode" id="light" onclick="darkFunction()">
+    </nav>
+    </section>
+
+    <!-- Main Services section -->
+    <section id="TC-page">
+        <div class="TC-core-message">
+            <!-- Title of the Page -->
+            <h1><b>TERMS AND CONDITIONS</b></h1>
+
+            <!-- Detailed Description -->>
+            <p><i>Last updated 12/02/2026</i></p>
+            <p>By visiting jamilin.com, you are consenting to the private policy and terms and conditions of this site. Policies</p>
+            <p>may be updated at any time. By using this site you acknowledge that it is your responsibility to review these policies</p>
+            <p>and be aware of any modifications.</p>
+
+            <h2><b>REFUNDS</b></h2>
+            <p>There is a no refund policy. By purchasing from jamilin.com you agree to this policy.</p>
+        </div>
+    </section>
+
+    <!-- FOOTER (darkmode toggles via ID) -->
+    <footer id="footer">
+    <div class="footer-container">
+
+        <!-- Lift Side: T&C -->
+        <div class="footer-left">
+            <!-- Terms and Conditions <a> is linking to the T&C page -->
+            <p>© 2025 | All Rights Reserved. </p><a href="T&C.html" style="text-decoration: none;">Terms and Conditions</a>
+        </div>
+
+        <!-- Right Side: The Social Icon & the contact-->
+        <div class="footer-right">
+        <!-- the first line on the Right Side that the contact <a> is linking to the Contact Page-->
+        <a href="contact.html" style="text-decoration: none;">Contact</a>
+            <!-- the second line on the Right Side each of the icon is linking to equivalence link-->
+            <div class="footer-icons">
+                <a href="https://www.instagram.com/jamilin_galacticspirit/" style="text-decoration: none;"><img src="Images/icon1.png" alt="social icon 1"></a>
+                <a href="https://www.youtube.com/@JamiLinsPassions" style="text-decoration: none;"><img src="Images/icon2.png" alt="social icon 2"></a>
+                <a href="https://www.facebook.com/JamiLin105" style="text-decoration: none;"><img src="Images/icon3.png" alt="social icon 3"></a>
+                <a href="https://www.tiktok.com/@jamilin105" style="text-decoration: none;"><img src="Images/icon4.png" alt="social icon 4"></a>
+            </div>
+        </div>
+            
+    </div>
+    </footer>  
+
+    <!--Timed Pop-Up Bottom Right-->
+    <section id="popup">
+        <div id="close_popup" onclick="closePopup()">
+            <h1>X</h1>
+        </div>
+        <div>
+            <h2>Stop, Dearest Galactic Spirit!</h2>
+            <p>Don't leave without <a href="https://galacticspirit.com/members/free_superpower.php">Your FREE SuperPower</a> & Personalized, <a href="https://galacticspirit.com/members/start.php">Soul-Mirror Activations</a></p>
+        </div>
+    </section>
+
+    <!-- ensure toggle icon syncs with darkmode -->
+    <script>
+        // Immediately Invoked Function Expression (IIFE) 
+        // a function that is defined and executed immediately after its creation.
+        (function() {
+            // Wait until the DOM is fully loaded before running the script
+            // DOM - Document Object Model
+            window.addEventListener('DOMContentLoaded', function() {
+                // one of the way I have used DOM is Asking the DOM "Find the element with id='light'"
+                let trigger = document.getElementById('light');
+                if (trigger) {
+                    // also checking "Does the element in the DOM have the class darkmode?""
+                    if (document.body.classList.contains('darkmode')) {
+                        // if Yes change it into sun.png
+                        trigger.src = "Images/sun.png";
+                    } else {
+                        // not change it into moon.png
+                        trigger.src = "Images/moon.png";
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

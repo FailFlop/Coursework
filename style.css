@@ -1,0 +1,832 @@
+body {
+    padding: 0;
+    margin: 0;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+    width: 100%;
+    scroll-behavior: smooth;
+    background-color: white; 
+    transition: background-color 0.2s, color 0.2s;
+}
+
+a, p, h1, h2, h3, li, span {
+    font-family: "Trebuchet MS", sans-serif;
+}
+
+/* nav */
+nav {
+    height: 4vw;
+    max-height: 80px;
+    min-height: 60px;
+    width: 100%;
+    background-color: #96FF97;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* CENTERS THE ENTIRE NAV CONTENT */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 2px solid rgba(0,60,0,0.15);
+    box-sizing: border-box;
+    padding: 0 1rem;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: darkgreen;
+    padding-left: 1.2%;
+    padding-right: 1.2%;
+    height: 100%;
+    font-size: clamp(1.2rem, 3.5vw, 1.8rem);
+    margin: 0 0.25vw;
+    text-align: center;
+    white-space: nowrap;
+}
+
+
+
+nav a#text:hover {
+    color: #96FF97;
+    background-color: darkgreen;
+    transition: 0.3s;
+}
+
+
+nav img {
+    height: 70%;
+    display: flex;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+nav a[href="#"] {
+    order: 3;
+    margin-left: 1vw;
+}
+
+nav a[href="about.html"] {
+    order: 2;
+}
+
+nav img#logo {
+    order: 1;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    height: 80%; 
+    cursor: pointer;
+}
+
+nav a[href="contact.html"] {
+    order: 5;
+}
+
+nav a[href="services.html"] {
+    order: 4;
+}
+
+nav img#light {
+    order: 6;
+    margin-left: auto; 
+    margin-right: 1.5vw;
+}
+
+nav#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Intro section with image - text left, image right */
+.intro-flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    max-width: 1300px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.intro-text-content {
+    flex: 1.1; /* Slightly more space for text */
+    text-align: left;
+}
+
+.intro-text-content h2 {
+    text-align: left;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    padding-right: 280px;
+    color: darkgreen;
+}
+
+.intro-text-content .tagline {
+    text-align: left;
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    color: #2d5a2d;
+}
+
+.intro-text-content .intro-details p {
+    text-align: left;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+    color: #333;
+}
+
+.intro-image-content {
+    flex: 1; /* Slightly more space for image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.portrait-image {
+    width: 100%;
+    height: 100%;
+    max-width: 500px;
+    border-radius: 30px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    object-fit: cover;
+}
+
+/* YouTube section with image - text right, image left */
+.youtube-flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    max-width: 1300px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.youtube-text-content {
+    flex: 1.1; /* Slightly more space for text */
+    text-align: left;
+}
+
+.youtube-text-content h2 {
+    text-align: left;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    color: darkgreen;
+    margin-bottom: 1.5rem;
+}
+
+.youtube-details p {
+    text-align: left;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.youtube-image-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.youtube-image {
+    width: 100%;
+    height: auto;
+    max-width: 600px;
+    border-radius: 30px;
+    object-fit: cover;
+}
+
+/* Keep the button left-aligned */
+.youtube-text-content .box-1 {
+    justify-content: flex-start;
+    margin-top: 1.5rem;
+}
+
+/* Keep the button left-aligned */
+.intro-text-content .box-1 {
+    justify-content: flex-start;
+    margin-top: 1.5rem;
+}
+
+/* footer */
+footer {
+    background-color: #1a1a1a;
+    clear:both;
+    color: white;
+    width: 100%;
+    padding: 1.5rem 2rem;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-snap-align: end;
+    font-family: "Trebuchet MS", sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    align-items: right;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.footer-left p {
+    font-size: 0.9rem;
+    color: #b0b0b0;
+    padding-top: 40px;
+    display: inline-flex;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.footer-left a {
+    display: inline-flex;
+    color: white;
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; 
+    gap: 0.5rem;
+}
+
+.footer-right p {
+    font-size: 1.1rem;
+    color: white;
+    margin: 0;
+    font-weight: 400;
+}
+
+.footer-right a {
+    color: white;
+}
+
+.footer-icons {
+    display: flex;
+    padding-top: 10px;
+    gap: 1.2rem;
+    align-items: center;
+}
+
+.footer-icons img {
+    height: 28px;
+    width: auto;
+    object-fit: contain;
+    opacity: 0.9;
+}
+
+.footer-icons img:hover {
+    opacity: 1;
+}
+
+.footer-right p {
+    font-size: 1.1rem;
+    color: white;
+    margin: 0;
+    font-weight: 400;
+    white-space: nowrap;
+}
+
+/* darkmode */
+body.darkmode {
+    background-color: #262626;
+}
+
+body.darkmode p, 
+body.darkmode a, 
+body.darkmode h1, 
+body.darkmode h2,
+body.darkmode strong,
+body.darkmode li {
+    color: lightgrey;
+}
+
+nav.darkmode {
+    background-color: darkgreen;
+}
+
+nav.darkmode a {
+    color: #96FF97;
+}
+
+nav.darkmode a#text:hover {
+    color: darkgreen;
+    background-color: #96FF97;
+}
+
+footer.darkmode {
+    background-color: black;
+}
+
+footer.darkmode .footer-left p {
+    color: #999;
+}
+
+body.darkmode .section-page h1,
+body.darkmode .section-page h2 {
+    color: #e4f2c2; /* soft light green */
+}
+
+body.darkmode .intro-text-content p, body.darkmode label{
+    color: #e0e0e0;
+}
+
+body.darkmode .intro-text-content .tagline {
+    color: #b8e0b8;
+}
+
+body.darkmode .intro-text-content h2 {
+    color: #96FF97;
+}
+
+
+/* mainpage section */
+.section-page {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1.5rem;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.section-page::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    width: 80%;
+    height: 1px;
+    background: rgba(0,80,0,0.1);
+}
+
+.section-page:last-child::after {
+    display: none;
+}
+
+.section-page h1,
+.section-page h2,
+.section-page p,
+.section-page strong,
+.section-page a {
+    max-width: 900px;
+    text-align: center; 
+}
+
+.section-page h1 {
+    font-size: clamp(2.4rem, 8vw, 4.4rem);
+    margin-bottom: 0.5rem;
+    color: darkgreen;
+}
+
+.section-page h2 {
+    font-size: clamp(1.8rem, 6vw, 3rem);
+    color: #1e3a1e;
+    margin-bottom: 0.75rem;
+}
+
+.section-page p {
+    font-size: clamp(1.1rem, 4vw, 1.6rem);
+    line-height: 1.6;
+    margin: 0.8rem auto;
+}
+
+.core-message {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+}
+
+.core-message li {
+    border: none;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    width: 100%;
+}
+
+.core-message strong {
+    font-size: clamp(1.4rem, 5vw, 2.2rem);
+    display: block;
+    margin-bottom: 1.5rem;
+    color: #1f4f1f;
+    text-align: center;  
+    width: 100%;        
+}
+
+.jamis-greeting {
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.intro-details p {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.tagline {
+    font-size: 1.7rem;
+    font-weight: 300;
+    margin-bottom: 1.2rem;
+    text-align: center;
+}
+
+.youtube-text {
+    font-size: 1.4rem;
+    max-width: 750px;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+div[class*=box] {
+	height: 33.33%;
+	width: 100%; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+	line-height: 50px;
+	height: 50px;
+	text-align: center;
+	width: 250px;
+	cursor: pointer;
+}
+
+.about-btn {
+    width: 200px; 
+    height: 40px; 
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    margin-left:25px;
+}
+
+.btn-one {
+	color: #000000;
+	transition: all 0.3s;
+	position: relative;
+}
+.btn-one span {
+	transition: all 0.3s;
+}
+.btn-one::before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	opacity: 0;
+	transition: all 0.5s;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-color: rgba(0, 0, 0, 0.5);
+	border-bottom-color: rgba(0, 0, 0, 0.5);
+	transform: scale(0.1, 1);
+}
+.btn-one:hover span {
+	letter-spacing: 2px;
+}
+.btn-one:hover::before {
+	opacity: 1;	
+	transform: scale(1, 1);	
+}
+.btn-one::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	transition: all 0.3s;
+	background-color: rgba(0, 0, 0, 0.1);
+}
+.btn-one:hover::after {
+	opacity: 0;	
+	transform: scale(0.1, 1);
+}
+
+.btn-one.darkmode::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	transition: all 0.3s;
+	background-color: rgba(255, 255, 255, 0.1);
+}
+
+body.darkmode .btn-one {
+    color: #ffffff;
+}
+
+body.darkmode .btn-one::before {
+    border-top-color: rgba(255, 255, 255, 0.5);
+	border-bottom-color: rgb(255, 255, 255, 0.5);
+}
+
+hr {
+    display: none;
+}
+
+body.darkmode nav img {
+    filter: brightness(1.2);
+}
+
+nav, section:has(nav) {
+    scroll-snap-align: none;
+}
+
+.description {
+    text-align: center;
+    width: 100%;
+}
+
+/* --- about page styles */
+.services {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    margin: auto;
+    padding-right:70px;
+}
+
+.services section {
+    background: rgba(235, 235, 235, 0.68);
+    text-align: center;
+    border-radius: 10px;
+    padding:20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    font-family: "Trebuchet MS", sans-serif;
+    margin-top:50px;
+    margin-bottom:50px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.services.darkmode section {
+    background: #4d4d4d;
+}
+
+.services.darkmode h2 {
+    color: #96FF97;
+}
+
+.services section p {
+    flex: auto; 
+}
+
+.services h2 {
+    color: darkgreen;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.services img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%; 
+    margin-bottom: 20px;
+    align-self: center;
+}
+
+.services section ul {
+    text-align: left;
+    padding-left: 30px;
+    margin: 0;
+}
+
+.services section li {
+    text-align: left;
+    font-family: "Trebuchet MS", sans-serif;
+}
+
+
+.aboutBtns:hover {
+    background-color: #162c63;
+    transform: translateY(-2px);
+}
+
+/* --- T&C page styles */
+.TC-page {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1.5rem;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.TC-core-message {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    margin-bottom: 15.05%;
+}
+
+/* ---------- Contacts page ----------- */
+
+label, textarea {
+    font-family:'Trebuchet MS', sans-serif;
+}
+
+#contactForm{
+    padding-left:2vw;
+    padding-right:2vw;
+    padding-top:2vh;
+    padding-bottom:2vh;
+    display:inline;
+    clear:both;
+    border: 2px solid #6b6b6b;
+    border-radius: 25px;
+    width:45vw;
+    float: left;
+    margin-left:25.5vw;
+    margin-bottom:10vh;
+}
+
+form {
+    margin-bottom:5vh;
+}
+
+textarea{
+    width:40vw;
+    resize: none;
+}
+
+textarea, input{
+    border-radius: 5px;
+    border-color: #6b6b6b;
+}   
+
+#socials{
+    display:block;
+    clear:both;
+    height:10vh;
+}
+
+#contact_headers{
+    display:block;
+    clear:both;
+    font-size: 3vw;
+    text-align: center;
+}
+
+#socials img{
+    display:inline;
+    width: 10vw;
+    float:left;
+    margin-left:11.5vw;
+}
+
+/* Pop-Up on ALL PAGES */
+
+#popup{
+    position: fixed;
+    right:0vw;
+    bottom:2vh;
+    background-color: #262626;
+    border: 2px solid #6b6b6b;
+    opacity: 0.9;
+    padding-left:1vw;
+    padding-right:1vw;
+    padding-top:1vh;
+    display:none;
+}
+
+#popup p, #popup h1, #popup h2, #popup a{
+    color:#999;
+    opacity:1;
+    font-size:1vw;
+}
+
+#popup h1, #popup h2{
+    font-size:1.5vw;
+    display:inline;
+}
+
+#close_popup{
+    float:right;
+}
+
+#popup a{
+    text-decoration: none;
+    color:#b8e0b8;
+}
+
+/* Dropdown Menu Styles */
+.dropdown {
+    position: relative; 
+    display: inline-block;
+    height: 100%;
+    margin: 0 0.25vw;
+}
+
+.dropbtn { /* styles btn on nav bar */
+    padding-left: 1.2%;
+    padding-right: 1.2%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    margin: 0;
+}
+/* styles open dropdown menu*/
+.dropdown-content { 
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #96FF97;
+    min-width: 250px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1000;
+    border-radius: 0 0 5px 5px;
+    border-top: 2px solid darkgreen;
+}
+/* context stylying*/
+.dropdown-content a {
+    color: darkgreen !important;
+    padding: 12px 16px;
+    display: block;
+    font-size: 1rem;
+    text-align: left;
+    white-space: normal;
+    height: auto;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.dropdown-content a:hover {
+    background-color: darkgreen;
+    color: #96FF97 !important;
+    transition: 0.3s;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    color: #96FF97;
+    background-color: darkgreen;
+    transition: 0.3s;
+}
+
+/* Dark mode dropdown styles */
+nav.darkmode .dropdown-content {
+    background-color: darkgreen;
+    border-top: 2px solid #96FF97;
+}
+
+nav.darkmode .dropdown-content a {
+    color: #96FF97 !important;
+}
+
+nav.darkmode .dropdown-content a:hover {
+    background-color: #96FF97;
+    color: darkgreen !important;
+}
